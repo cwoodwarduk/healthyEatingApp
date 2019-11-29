@@ -12,11 +12,11 @@ class ShoppingItemModel
     /**
      * ShoppingItemModel constructor.
      *
-     * @param $db a database connection.
+     * @param PDO $db a database connection.
      *
      * @return a populated $db property
      */
-    public function __construct($db)
+    public function __construct(PDO $db)
     {
         $this->db = $db;
     }
