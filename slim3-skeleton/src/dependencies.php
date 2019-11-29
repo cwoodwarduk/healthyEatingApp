@@ -28,4 +28,7 @@ return function (App $app) {
         return $db;
     };
 
+    $container['ShoppingItemModel'] = new HealthyEating\factories\ShoppingItemModelFactory();
+    $container['GetAllShoppingItemsController'] = new HealthyEating\factories\GetAllShoppingItemsControllerFactory();
+
 };

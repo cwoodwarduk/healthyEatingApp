@@ -22,9 +22,11 @@ class GetAllShoppingItemsController
      *
      * Populates the renderer and shoppingItemModel properties
      *
-     * @param PhpRenderer $renderer
+     * @param $renderer the PhpRenderer
      *
-     * @param ShoppingItemModel $shoppingItemModel
+     * @param $shoppingItemModel a ShoppingItemModel
+     *
+     * @return populated renderer and shoppingItemModel properties
      */
     public function __construct(PhpRenderer $renderer, ShoppingItemModel $shoppingItemModel)
     {
@@ -33,13 +35,17 @@ class GetAllShoppingItemsController
     }
 
     /**
-     * @param $request
-     * @param $response
-     * @param $args
+     * @param $request the http request
+     *
+     * @param $response the http response
+     *
+     * @param $args an array of arguments
+     *
+     * @return renders the
      */
     public function __invoke($request, $response, $args)
     {
-        $args['shoppingItems'] = $this->shoppingItemModel->getAllToDos();
+        $args['shoppingItems'] = $this->shoppingItemModel->getAllShoppingItems();
         $this->renderer->render($response, 'index.phtml', $args);
     }
 }
