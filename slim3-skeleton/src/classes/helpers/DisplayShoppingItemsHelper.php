@@ -1,6 +1,5 @@
 <?php
 
-
 namespace HealthyEating\helpers;
 
 use HealthyEating\entities\ShoppingItemEntity;
