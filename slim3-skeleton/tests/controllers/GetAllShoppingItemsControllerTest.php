@@ -10,8 +10,9 @@ class GetAllShoppingItemsControllerTest extends TestCase
 {
     public function testConstruct()
     {
-        $shoppingItemModel = $this->createMock(ShoppingItemModel::class);
-        $case = new GetAllShoppingItemsController($shoppingItemModel);
+        $mockRender = $this->createMock(PhpRenderer::class);
+        $mockModel = $this->createMock(ShoppingItemModel::class);
+        $case = new GetAllShoppingItemsController($mockRender, $mockModel);
         $expected = GetAllShoppingItemsController::class;
         $this->assertInstanceOf($expected, $case);
     }
