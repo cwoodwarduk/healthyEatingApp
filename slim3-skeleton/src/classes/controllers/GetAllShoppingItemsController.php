@@ -18,15 +18,13 @@ class GetAllShoppingItemsController
     private $shoppingItemModel;
 
     /**
-     * GetAllShoppingItemsController constructor.
-     *
-     * Populates the renderer and shoppingItemModel properties
+     * GetAllShoppingItemsController constructor. Populates the renderer and shoppingItemModel properties
      *
      * @param $renderer the PhpRenderer
      *
      * @param $shoppingItemModel a ShoppingItemModel
      *
-     * @return populated renderer and shoppingItemModel properties
+     * @returns populated renderer and shoppingItemModel properties
      */
     public function __construct(PhpRenderer $renderer, ShoppingItemModel $shoppingItemModel)
     {
@@ -41,7 +39,7 @@ class GetAllShoppingItemsController
      *
      * @param $args an array of arguments
      *
-     * @return renders the
+     * @returns JSON with shopping item data
      */
     public function __invoke($request, $response, $args)
     {
