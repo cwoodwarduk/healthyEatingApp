@@ -6,6 +6,13 @@ use Psr\Container\ContainerInterface;
 
 class ShoppingItemModelFactory
 {
+    /**
+     * Factory to generate a ShoppingItemModel
+     *
+     * @param ContainerInterface $container
+     *
+     * @return ShoppingItemModel
+     */
     public function __invoke(ContainerInterface $container) : ShoppingItemModel
     {
         $db = $container->get('dbConnection');
