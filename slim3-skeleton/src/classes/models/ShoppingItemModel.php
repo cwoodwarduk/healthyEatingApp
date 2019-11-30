@@ -2,6 +2,8 @@
 
 namespace HealthyEating\models;
 
+use PDO;
+
 class ShoppingItemModel
 {
     /**
@@ -45,6 +47,20 @@ class ShoppingItemModel
     {
         $query = $this->db->prepare('INSERT INTO `shopping_items` (`name`, `bought`, `deleted`) VALUES (:name, 0, 0);');
         $query->bindParam(':name', $name);
+        return $query->execute();
+    }
+
+    /**
+     * Change the deleted flag of an item in the db to be marked as deleted
+     *
+     * @param $id the id of the shopping item to be marked as deleted
+     *
+     * @return boolean if query is successful
+     */
+    public function deleteShoppingItem($id)
+    {
+        $query = $this->db->prepare('UPDATE `shopping_items` SET `deleted` = 1 WHERE `id` = :id;');
+        $query->bindParam(':id', $id);
         return $query->execute();
     }
 }
