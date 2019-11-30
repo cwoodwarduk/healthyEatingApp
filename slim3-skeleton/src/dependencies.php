@@ -30,5 +30,6 @@ return function (App $app) {
 
     $container['ShoppingItemModel'] = new HealthyEating\factories\ShoppingItemModelFactory();
     $container['GetAllShoppingItemsController'] = new HealthyEating\factories\GetAllShoppingItemsControllerFactory();
+    $container['AddShoppingItemController'] = new HealthyEating\factories\AddShoppingItemControllerFactory();
 
 };

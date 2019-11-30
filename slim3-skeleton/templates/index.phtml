@@ -6,12 +6,20 @@
         <link href='//fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
     </head>
     <body>
+        <div class="toBuy">
+            <h1>Things to Buy:</h1>
 
-    <h1>Things to Buy:</h1>
+            <?php
+            echo HealthyEating\helpers\DisplayShoppingItemsHelper::displayShoppingItems($shoppingItems);
+            ?>
+        </div>
 
-    <?php
-    echo HealthyEating\helpers\DisplayShoppingItemsHelper::displayShoppingItems($shoppingItems);
-    ?>
+        <div class="add" id="add">
+            <h1>Add Item to List:</h1>
 
+            <?php
+            echo HealthyEating\helpers\AddShoppingItemHelper::addShoppingItemsForm();
+            ?>
+        </div>
     </body>
 </html>
