@@ -8,13 +8,13 @@ use HealthyEating\factories\GetAllShoppingItemsControllerFactory;
 use HealthyEating\models\ShoppingItemModel;
 use Psr\Container\ContainerInterface;
 
-class AddShoppingItemControllerFactoryTest extends TestCase
+class GetAllShoppingItemsControllerFactoryTest extends TestCase
 {
     public function testController()
     {
         $container = $this->createMock(ContainerInterface::class);
-        $eventModel = $this->createMock(ShoppingItemModel::class);
-        $container->method('get')->willReturn($eventModel);
+        $shoppingItemModel = $this->createMock(ShoppingItemModel::class);
+        $container->method('get')->willReturn($shoppingItemModel);
         $factory = new GetAllShoppingItemsControllerFactory();
         $case = $factory($container);
         $expected = GetAllShoppingItemsController::class;

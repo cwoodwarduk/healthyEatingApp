@@ -18,15 +18,30 @@ class ShoppingItemEntityTest extends \PHPUnit_Framework_TestCase
 
     public function testGetIdSuccess()
     {
-        $applicant = $this->createShoppingItem();
-        $result = $applicant->getId();
-        $this->assertEquals($result, 1);
+        $item = $this->createShoppingItem();
+        $result = $item['shoppingItemName'];
+        $this->assertEquals($result, 6);
     }
 
     public function testGetNameSuccess()
     {
-        $applicant = $this->createApplicant();
-        $result = $applicant->getName();
-        $this->assertEquals($result, 'james');
+        $item = $this->createShoppingItem();
+        $result = $item['shoppingItemName'];
+        $this->assertEquals($result, 'skimmed milk');
     }
+
+    public function testGetBoughtSuccess()
+    {
+        $item = $this->createShoppingItem();
+        $result = $item['bought'];
+        $this->assertEquals($result, 0);
+    }
+
+    public function testGetDeletedSuccess()
+    {
+        $item = $this->createShoppingItem();
+        $result = $item['deleted'];
+        $this->assertEquals($result, 0);
+    }
+
 }
