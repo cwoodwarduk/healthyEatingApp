@@ -5,11 +5,11 @@ namespace Tests\Factories;
 use PHPUnit\Framework\TestCase;
 use Slim\Views\PhpRenderer;
 use Psr\Container\ContainerInterface;
-use HealthyEating\factories\AddShoppingItemControllerFactory;
+use HealthyEating\factories\DeleteShoppingItemControllerFactory;
 use HealthyEating\models\ShoppingItemModel;
-use HealthyEating\controllers\AddShoppingItemController;
+use HealthyEating\controllers\DeleteShoppingItemController;
 
-class AddShoppingItemControllerFactoryTest extends TestCase
+class DeleteShoppingItemControllerFactoryTest extends TestCase
 {
     public function testInvoke()
     {
@@ -17,9 +17,9 @@ class AddShoppingItemControllerFactoryTest extends TestCase
         $shoppingItemModel = $this->createMock(ShoppingItemModel::class);
         $container->method('post')
             ->willReturn($shoppingItemModel);
-        $factory = new AddShoppingItemControllerFactory();
+        $factory = new DeleteShoppingItemControllerFactory();
         $case = $factory($container);
-        $expected = AddShoppingItemController::class;
+        $expected = DeleteShoppingItemController::class;
         $this->assertInstanceOf($expected, $case);
     }
 }

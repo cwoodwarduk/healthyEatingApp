@@ -35,9 +35,8 @@ class DeleteShoppingItemController
      */
     public function __invoke($request, $response, $args)
     {
-        $data = $request->getParam();
-        $data = $data['id'];
-        $result = $this->shoppingItemModel->deleteShoppingItem($data);
+        $id = $request->getParam('id');
+        $result = $this->shoppingItemModel->deleteShoppingItem($id);
         if($result){
             return $response->withRedirect('/shoppingItem');
         } else {

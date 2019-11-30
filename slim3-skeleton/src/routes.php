@@ -9,4 +9,5 @@ return function (App $app) {
 
     $app->get('/shoppingItem', 'GetAllShoppingItemsController');
     $app->post('/shoppingItem', 'AddShoppingItemController');
+    $app->post('/deleteItem', 'DeleteShoppingItemController');
 };
